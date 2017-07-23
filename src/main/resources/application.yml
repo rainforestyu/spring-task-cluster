@@ -1,0 +1,8 @@
+spring:
+    profiles:
+        active: prod
+    aop:
+        proxy-target-class: true
+debug: false
+server:
+  port: 8080

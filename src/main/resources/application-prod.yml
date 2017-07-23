@@ -1,0 +1,14 @@
+spring:
+    profiles:
+        active: prod
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8
+        username: root
+        password: root
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        database: MYSQL
+        show-sql: true
+        properties:
+            hibernate.hbm2ddl.auto: update

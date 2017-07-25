@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.sql.Date;
 import java.time.LocalDateTime;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * @Auther Zhaoyu Chen @ Fuzhou
@@ -14,6 +15,8 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "job_record" , uniqueConstraints = {
         @UniqueConstraint(columnNames = {"job_name", "job_date"}) })
+// Add this annotation to transfer "null" to front end
+@JsonIgnoreProperties({ "handler","hibernateLazyInitializer" })
 public class JobRecord implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
